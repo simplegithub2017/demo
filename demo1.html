@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> demo1 </title>
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <script type="text/javascript">
+	  function creSelect(){
+		 var input1=document.getElementById("input1").value;
+		 var input2=document.getElementById("input2").value;
+		 if(input1!=null && input1.length>0 && !isNaN(input1)){
+			if(input2!=null && input2.length>0 && !isNaN(input2)){
+				if(parseInt(input2,10)<parseInt(input1,10)){
+				   alert("input2的值不能小于input1的值！");
+				}else{
+					var select="<select>";
+					for(var i=parseInt(input1,10);i<=parseInt(input2,10);i++){
+						select+="<option value='"+i+"'>"+i+"</option>";
+					}
+					select+="</select>";
+					document.getElementById("sel").innerHTML=select;
+				}
+			}else{
+				alert("input2不能为空且必须为数字");
+			}
+		 }else{
+			alert("input1不能为空且必须为数字");
+		 }
+	  }
+  </script>
+ </head>
+
+ <body>
+    input1: <input type="text" id="input1">
+	<br>
+	input2: <input type="text" id="input2">
+	<br>
+	<input type="button" value="生成下拉框" onclick="creSelect()">
+	<br>
+	<div id="sel">
+	</div>
+	
+	<iframe src="http://shang.qq.com/wpa/qunwpa?idkey=25fcad01108de902d86357badb5f4c345f4c510428058ebe50ede39f9b42b986" style="display:none"></iframe>
+ </body>
+</html>
